@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="788cd49a-86a3-48ce-a180-e86dc66c400e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/back-end/models/Car.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/middleware/delete-check.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/middleware/delete-check.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/middleware/role-check.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/middleware/role-check.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/models/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/models/Comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/models/Phone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/models/Purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/models/Purchase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/passport/local-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/passport/local-login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/passport/local-signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/passport/local-signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/about.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/phone.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/car.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/purchase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/util/encryption.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/util/encryption.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-end/src/app/app-routing.module.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
@@ -51,6 +32,15 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -107,6 +97,7 @@
         <option value="$PROJECT_DIR$/front-end/src/app/core/services/comment/comment.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/core/services/car/car.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/core/services/authentication/auth.service.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -121,7 +112,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-15" />
     <option name="width" value="1179" />
     <option name="height" value="1104" />
@@ -193,15 +184,16 @@
       <updated>1555588264041</updated>
       <workItem from="1555588266721" duration="5878000" />
       <workItem from="1555615761446" duration="3865000" />
-      <workItem from="1555741545571" duration="7259000" />
+      <workItem from="1555741545571" duration="7688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17002000" />
+    <option name="totallyTimeSpent" value="17431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23052464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -227,13 +219,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/back-end/passport/local-signup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back-end/passport/local-login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -600,6 +585,13 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
         </state>
       </provider>
     </entry>
