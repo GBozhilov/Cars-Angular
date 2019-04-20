@@ -6,28 +6,30 @@ const roleCheck = require('../middleware/role-check');
 const deleteCheck = require('../middleware/delete-check');
 
 const Comment = require('mongoose').model('Comment');
-const Phone = require('mongoose').model('Phone');
+const Car = require('mongoose').model('Car');
 const User = require('mongoose').model('User');
 
-router.post('/create/:id', async(req, res, next) => {
-    let comment = req.body
-    let userId = req.params.id
-    let user = await User.findById(userId)
+router.post('/create/:id', async (req, res, next) => {
+    let comment = req.body;
+    let userId = req.params.id;
+    let user = await User.findById(userId);
+
     try {
         if (!user) {
-            throw new Error('Unauthorized')
+            throw new Error('Unauthorized');
         }
-        
+
         let result = await Comment.create({
             text: comment.text,
             creator: userId,
             date: Date.now(),
-            phone: comment.phoneId
-        })
-        await Phone.findByIdAndUpdate(
-            result.phone, {
+            car: comment.carId
+        });
+
+        await Car.findByIdAndUpdate(
+            result.car, {
                 $push: {
-                    "comments": result._id
+                    'comments': result._id
                 }
             }, {
                 safe: true,
@@ -35,14 +37,14 @@ router.post('/create/:id', async(req, res, next) => {
             }
         );
 
-        console.log('Comment add')
+        console.log('Comment added.');
         res.status(200).json({
             success: true,
-            message: 'Successfully add comment.',
-            phone: result
+            message: 'Successfully add a comment.',
+            car: result
         });
     } catch (error) {
-        console.log('Comment not add')
+        console.log('Comment did not add.');
 
         res.status(202).json({
             success: false,
@@ -51,17 +53,16 @@ router.post('/create/:id', async(req, res, next) => {
     }
 
 
-
 });
 
-router.get('/all/:id', async(req, res, next) => {
-    let id = req.params.id
-    
+router.get('/all/:id', async (req, res, next) => {
+    let id = req.params.id;
+
     try {
         const comments = await Comment
-            .find({phone: id}).sort({date: -1})
-            .populate('creator')
-        
+            .find({car: id}).sort({date: -1})
+            .populate('creator');
+
         res.status(200).json({
             success: true,
             comments
@@ -74,33 +75,33 @@ router.get('/all/:id', async(req, res, next) => {
     }
 
 });
-router.get('/delete/:id/:userId', async(req, res, next) => {
-    let id = req.params.id
-    let userId = req.params.userId
+router.get('/delete/:id/:userId', async (req, res, next) => {
+    let id = req.params.id;
+    let userId = req.params.userId;
     const user = await User.findById(userId);
     const currComment = await Comment.findById(id);
-    try {
-        console.log(user.roles.indexOf('Admin') <= -1)
-        if (currComment.creator != userId ) {
-            if (user.roles.indexOf('Admin') <= -1) {
-                console.log('errr')
-                throw new Error('Unauthorized')   
-            }          
-        }
-        let comment = await Comment.findByIdAndRemove(id)
-        let phone = await Phone.update(
-            { _id: comment.phone }, 
-            { $pull: { comments: comment._id } }, 
-            { multi: true }
-          )
 
-        console.log('Comment delete')
+    try {
+        if (currComment.creator != userId) {
+            if (user.roles.indexOf('Admin') <= -1) {
+                throw new Error('Unauthorized');
+            }
+        }
+
+        let comment = await Comment.findByIdAndRemove(id);
+        let car = await Car.update(
+            {_id: comment.car},
+            {$pull: {comments: comment._id}},
+            {multi: true}
+        );
+
+        console.log('Comment deleted.');
         res.status(200).json({
             success: true,
-            message: 'Comment delete successfuly.',
+            message: 'Comment deleted successfully.',
         });
     } catch (error) {
-        console.log('Comment not exist')
+        console.log('Comment did not exist');
 
         res.status(202).json({
             success: false,

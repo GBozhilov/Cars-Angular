@@ -8,13 +8,13 @@ const passport = require('passport');
 const localSignupStrategy = require('./passport/local-signup');
 const localLoginStrategy = require('./passport/local-login');
 
-require('./config/database')(config)
+require('./config/database')(config);
 
 const app = express();
 
 const port = 5000;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(cors());

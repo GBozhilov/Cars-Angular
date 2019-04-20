@@ -1,11 +1,11 @@
 {
-  "name": "exam-server",
+  "name": "car-server",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Ivaylo Kenov",
+  "author": "Georgi Bozhilov",
   "license": "MIT",
   "dependencies": {
     "body-parser": "1.17.2",

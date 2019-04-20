@@ -4,28 +4,29 @@ const router = new express.Router();
 const authCheck = require('../middleware/auth-check');
 const roleCheck = require('../middleware/role-check');
 
-const Phone = require('mongoose').model('Phone');
+const Phone = require('mongoose').model('Car');
 const Purchase = require('mongoose').model('Purchase');
 const User = require('mongoose').model('User');
 
-router.post('/create/:phoneId/:userId', async(req, res, next) => {
-    let phoneId = req.params.phoneId
-    let userId = req.params.userId
+router.post('/create/:carId/:userId', async (req, res, next) => {
+    const carId = req.params.carId;
+    const userId = req.params.userId;
+
     try {
         let result = await Purchase.create({
             creator: userId,
-            phone: phoneId,
+            car: carId,
             date: Date.now(),
-        })
+        });
 
-        console.log('Purchase add')
+        console.log('Purchase add.');
         res.status(200).json({
             success: true,
             message: 'Successfully add purchase.',
             purchase: result
         });
     } catch (error) {
-        console.log('Purchase not add')
+        console.log('Purchase not add.');
 
         res.status(202).json({
             success: false,
@@ -34,19 +35,18 @@ router.post('/create/:phoneId/:userId', async(req, res, next) => {
     }
 
 
-
 });
-router.get('/status/:userId', async(req, res, next) => {
-    let userId = req.params.userId
-    let user = await User.findById(userId)
-    if (user.roles.includes('Admin')) {
-        let orderStatus = ['Accepted', 'In Progress', 'Shipped', 'Delivered', 'Completed']
-        try {            
-            let purchase = await Purchase.find({}).populate({ path: 'phone', select: 'brand model' }).sort({date: -1})
+router.get('/status/:userId', async (req, res, next) => {
+    let userId = req.params.userId;
+    let user = await User.findById(userId);
 
-            
+    if (user.roles.includes('Admin')) {
+        let orderStatus = ['Accepted', 'In Progress', 'Shipped', 'Delivered', 'Completed'];
+        try {
+            let purchase = await Purchase.find({}).populate({path: 'car', select: 'brand model'}).sort({date: -1});
+
             purchase.forEach((p, i) => {
-                let currStat = purchase[i].status
+                let currStat = purchase[i].status;
                 purchase[i].status = [currStat, ...orderStatus.filter(p => p !== currStat)].join(',')
             });
             res.status(200).json({
@@ -61,11 +61,10 @@ router.get('/status/:userId', async(req, res, next) => {
             });
         }
     } else {
-
         try {
             let purchase = await Purchase.find({
                 creator: userId
-            }).populate('phone').populate({ path: 'phone', select: 'brand model' }).sort({date: -1})
+            }).populate('car').populate({path: 'car', select: 'brand model'}).sort({date: -1});
             res.status(200).json({
                 success: true,
                 purchase: purchase
@@ -78,20 +77,21 @@ router.get('/status/:userId', async(req, res, next) => {
         }
     }
 });
-router.post('/status/:id/:userId', async(req, res, next) => {
-    let id = req.params.id
-    let userId = req.params.userId
-    let user = await User.findById(userId)
-   
+
+router.post('/status/:id/:userId', async (req, res, next) => {
+    let id = req.params.id;
+    let userId = req.params.userId;
+    let user = await User.findById(userId);
+
     try {
         if (!user.roles.includes('Admin')) {
             throw new Error('Unauthorized')
         }
-        await Purchase.findByIdAndUpdate(id, {status: req.body.status})
+        await Purchase.findByIdAndUpdate(id, {status: req.body.status});
 
-         res.status(200).json({
+        res.status(200).json({
             success: true,
-            message: 'Purchase are updated successfully'
+            message: 'Purchase are updated successfully.'
         });
     } catch (error) {
         res.status(201).json({
@@ -101,10 +101,11 @@ router.post('/status/:id/:userId', async(req, res, next) => {
     }
 });
 
-router.get('/details/:id', async(req, res, next) => {
-    let id = req.params.id
+router.get('/details/:id', async (req, res, next) => {
+    const id = req.params.id;
+
     try {
-        let purchase = await Purchase.findById(id).populate('phone')
+        let purchase = await Purchase.findById(id).populate('car');
         res.status(200).json({
             success: true,
             purchase: purchase
@@ -116,7 +117,6 @@ router.get('/details/:id', async(req, res, next) => {
         });
     }
 });
-
 
 
 module.exports = router;

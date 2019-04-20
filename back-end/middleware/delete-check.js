@@ -3,7 +3,7 @@ const User = require('mongoose').model('User');
 const Comment = require('mongoose').model('Comment');
 
 
-module.exports = async(req, res, next) => {
+module.exports = async (req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(401).end();
     }
@@ -12,14 +12,15 @@ module.exports = async(req, res, next) => {
     const token = req.headers.authorization.split(' ')[1];
 
     // decode the token using a secret key-phrase
-    return jwt.verify(token, 's0m3 r4nd0m str1ng', async(err, decoded) => {
+    return jwt.verify(token, 's0m3 r4nd0m str1ng', async (err, decoded) => {
         // the 401 code is for unauthorized status
         if (err) {
             return res.status(401).end();
         }
 
         const userId = decoded.sub;
-        const id = req.params.id
+        const id = req.params.id;
+
         try {
             const user = await User.findById(userId);
             const comment = await Comment.findById(id);
@@ -28,16 +29,13 @@ module.exports = async(req, res, next) => {
 
                 return next();
             }
+
             return res.status(401).end();
-
-
         } catch (error) {
             return res.status(202).json({
                 success: false,
                 message: error.message,
             }).end();
         }
-
-
     });
 };

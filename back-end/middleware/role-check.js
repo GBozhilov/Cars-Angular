@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('mongoose').model('User');
 
-module.exports = (role) =>  (req, res, next) => {
+module.exports = (role) => (req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(401).end();
     }
@@ -11,8 +11,9 @@ module.exports = (role) =>  (req, res, next) => {
 
     // decode the token using a secret key-phrase
     return jwt.verify(token, 's0m3 r4nd0m str1ng', async (err, decoded) => {
-    // the 401 code is for unauthorized status
-        if (err) { return res.status(401).end(); }
+        if (err) {
+            return res.status(401).end();
+        }
 
         const userId = decoded.sub;
         const user = await User.findById(userId);
