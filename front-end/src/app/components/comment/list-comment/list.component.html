@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h4>Comments:</h4>
+</div>
+<hr>
+<div *ngFor='let comment of comments' class="col-md-12">
+  <div class="media">
+    <span (click)='delComment(comment?._id)' *ngIf='authService.isCommentOwner(comment.creator?._id)'
+          class="glyphicon glyphicon-remove commentDel"></span>
+    <div class="media-left">
+      <span class="glyphicon glyphicon-user"></span>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{comment?.creator?.name}}</h4>
+      <p>{{comment?.text}}</p>
+    </div>
+    <small>Date: {{comment?.date | date: 'yyyy-MM-dd HH:mm'}}</small>
+  </div>
+  <hr>
+</div>

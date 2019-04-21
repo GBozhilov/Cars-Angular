@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLinkActive="active" routerLink="/">Phone Market</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li *ngIf='server.isAdmin()'>
+        <a routerLink="/phone/add">Add Phone</a>
+      </li>
+      <li>
+        <a routerLink="/phone/list">All Phone</a>
+      </li>
+      <li *ngIf='!server.isLoggedIn()'>
+        <a [routerLink]="['/order/list']">Order Status</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf='!server.isLoggedIn()'>
+        <a>
+          <span class="glyphicon glyphicon-user"></span> Welcome {{server.username || currName}}!</a>
+      </li>
+      <li *ngIf='!server.isLoggedIn()'>
+        <a routerLink="/logout">
+          <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+      </li>
+      <app-login *ngIf='server.isLoggedIn()'></app-login>
+    </ul>
+  </div>
+</nav>

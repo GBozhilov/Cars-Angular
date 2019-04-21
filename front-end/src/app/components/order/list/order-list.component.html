@@ -1,0 +1,40 @@
+<div *ngIf='orders' class="container well">
+  <div class="text-center">
+    <h1><strong>All Orders</strong></h1>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Status</th>
+      <th>Details</th>
+    </tr>
+    </thead>
+    <tbody *ngFor='let order of orders' class="text-success">
+    <tr class={{order.classOrder}}>
+      <td>{{order?.date | date: 'yyyy-MM-dd HH:mm'}}</td>
+      <td>{{order?.car?.brand}}</td>
+      <td>{{order?.car?.model}}</td>
+      <td *ngIf='!authService.isAdmin()'>{{order?.status}}</td>
+      <td *ngIf='authService.isAdmin()'>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle myBtn" type="button"
+                  data-toggle="dropdown">{{order?.status[0]}}
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu ">
+            <li><a [routerLink]="['/order/update', order._id, order.status[1]]">{{order?.status[1]}}</a></li>
+            <li><a [routerLink]="['/order/update', order._id, order.status[2]]">{{order?.status[2]}}</a></li>
+            <li><a [routerLink]="['/order/update', order._id, order.status[3]]">{{order?.status[3]}}</a></li>
+            <li><a [routerLink]="['/order/update', order._id, order.status[4]]">{{order?.status[4]}}</a></li>
+          </ul>
+        </div>
+      </td>
+      <td>
+        <a [routerLink]="['/order/details', order._id]" class="btn btn-default">Details</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

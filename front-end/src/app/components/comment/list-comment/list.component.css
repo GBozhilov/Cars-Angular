@@ -1,0 +1,13 @@
+.media {
+  position: relative;
+}
+
+.commentDel {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+h4 {
+  margin: 0 auto;
+}

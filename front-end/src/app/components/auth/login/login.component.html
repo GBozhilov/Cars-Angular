@@ -1,0 +1,5 @@
+<form (ngSubmit)='login($event)' [formGroup]="model" class="form-inline">
+  <input formControlName="email" type="email" class="input-sm" placeholder="Enter email" name="email">
+  <input formControlName="password" type="password" class="input-sm" placeholder="Enter password" name="pwd">
+  <button [disabled]='!loginFail' type="submit" class="btn btn-default btn-sm">Sign In</button>
+</form>

@@ -1,0 +1,27 @@
+<div class="container listItem">
+  <div class="row">
+
+    <div class="col-md-9 col-md-offset-3 mySearch">
+      <form action="" class="search-form">
+        <div class="form-group has-feedback">
+          <input (keyup)='getPhones($event)' type="text" class="form-control" name="search" id="search" placeholder="search phone by brand">
+          <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
+    </div>
+    <div *ngFor="let phone of phones" class="col-md-4">
+      <a [routerLink]="['/phone/details', phone._id]">
+        <div class="col-sm-12 thumbnail text-center">
+          <img alt="Img" class="img-responsive" src={{phone.imgUrl}}>
+          <div class="caption">
+            <h4>{{phone?.brand}} {{phone?.model}}</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="row myPagination">
+      <div class="col text-center">
+        <app-pagination></app-pagination>
+      </div>
+    </div>
+  </div>
