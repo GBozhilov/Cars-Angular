@@ -1,0 +1,54 @@
+<section *ngIf="car">
+    <article class="row">
+        <div class="col-6">
+          <img src="{{ car.imageUrl }}" alt="not found image">
+        </div>
+        <table class="col-6 table-striped">
+          <thead>
+            <tr>
+              <th colspan="6" class="text-center c">{{ car.model }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>EngineType:</th>
+              <td>{{ car.engineType }}</td>
+            </tr>
+            <tr>
+              <th>Horsepower:</th>
+              <td>{{ car.horsePower }}</td>
+            </tr>
+            <tr>
+              <th>Fuel Capacity:</th>
+              <td>{{ car.fuelCapacity }} liters</td>
+            </tr>
+            <tr>
+              <th>Transmission:</th>
+              <td>{{ car.transmission }}</td>
+            </tr>
+            <tr>
+              <th>Kilometers Traveled:</th>
+              <td>{{ car.kilometersTraveld }}</td>
+            </tr>
+            <tr>
+              <th>Price Per Day:</th>
+              <td>{{ car.priceForDayRent }}$</td>
+            </tr>
+            <tr>
+              <th>Counter Rents:</th>
+              <td>{{ car.counterRents }}</td>
+            </tr>
+            <tr>
+              <th>Is rented now:</th>
+              <td>{{ car.isRented ? 'yes' : 'no' }}</td>
+            </tr>
+            <tr>
+              <th colspan="6" class="text-center">Description</th>
+            </tr>
+            <tr>
+              <td colspan="6" class="text-center">{{ car.description }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+</section>

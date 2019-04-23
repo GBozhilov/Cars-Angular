@@ -1,0 +1,13 @@
+<section class="car-create">
+  <header>
+    <h1>Create Car</h1>
+  </header>
+  <section class="content">
+      <app-car-form 
+      [car]=null
+      [isDisabled]=false
+      formName="Create"
+      (onSubmitForm)="create($event)">
+    </app-car-form>
+  </section>
+</section>

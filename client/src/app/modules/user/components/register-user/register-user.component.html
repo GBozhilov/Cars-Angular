@@ -1,0 +1,52 @@
+<section class="register">
+  <header>
+    <h1>Register</h1>
+  </header>
+  <section class="main-content">
+    <section class="form">
+      <form [formGroup]="form" (submit)="register()">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                 placeholder="Enter your email" formControlName="email">
+          <div class="alert alert-danger" *ngIf="fields.email.touched && fields.email?.errors?.required">
+            <span>Email field is required!</span>
+          </div>
+          <div class="alert alert-danger" *ngIf="fields.email?.errors?.pattern">
+            <span>Email is invalid. Please enter a valid email!</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                 formControlName="password">
+          <div class="alert alert-danger" *ngIf="fields.password.touched && fields.password?.errors?.required">
+            <span>Password field is required!</span>
+          </div>
+          <div class="alert alert-danger" *ngIf="fields.password?.errors?.minlength">
+            <span>Password field must be at least {{fields.password.errors.minlength.requiredLength}} symbols
+              long!</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="repeatPassword">Confirm Password</label>
+          <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat your password"
+                 formControlName="repeatPassword">
+          <div class="alert alert-danger"
+               *ngIf="fields.repeatPassword.touched && fields.repeatPassword?.errors?.required">
+            <span>Confirm Password field is required!</span>
+          </div>
+          <div class="alert alert-danger" *ngIf="fields?.repeatPassword?.touched && form?.errors?.notMatching">
+            <span>Password and Confirm Password fields must be equal!</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Register</button>
+      </form>
+    </section>
+    <section class="image">
+      <div>
+        <img src="https://cdn.wallpapersafari.com/56/61/gEdY0G.jpg" alt="not found car-rent">
+      </div>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,36 @@
+.list-cars header h1 {
+    text-align: center;
+}
+
+.list-cars {
+    padding: 1em;
+}
+
+.list {
+    padding: 0.5em;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li img {
+    width: 100%;
+    height: 200px;
+}
+
+ul a {
+    margin: 0.5em;
+    min-width: 116px;
+}
+
+.my-span {
+    padding: 0.3em;
+    margin: 8px;
+}
+
+.e {
+    min-width: 153px !important;
+}

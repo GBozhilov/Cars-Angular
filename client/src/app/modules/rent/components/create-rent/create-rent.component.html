@@ -1,0 +1,25 @@
+<section class="rent">
+  <header>
+    <h1>Rent A Car</h1>
+  </header>
+  <section class="content">
+    <section class="form">
+      <form [formGroup]="form" (submit)="rent()">
+        <div class="form-group">
+          <label for="days">Days</label>
+          <input type="days" class="form-control" id="days" placeholder="Enter days" formControlName="days">
+          <div class="alert alert-danger" *ngIf="fields.days.touched && fields.days?.errors?.required">
+            <span>Days field is required!</span>
+          </div>
+          <div class="alert alert-danger" *ngIf="fields.days?.errors?.min">
+            <span>Days field must be greater than or equal to {{ fields.days.errors.min.min }}</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="form.invalid">Rent</button>
+      </form>
+    </section>
+    <section class="car">
+      <app-car-full-info [car]="car"></app-car-full-info>
+    </section>
+  </section>
+</section>

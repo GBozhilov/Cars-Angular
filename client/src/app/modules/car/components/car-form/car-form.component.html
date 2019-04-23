@@ -1,0 +1,85 @@
+<section *ngIf="car" class="form">
+  <form [formGroup]="form" (submit)="submit()">
+    <div class="form-group">
+      <label for="model">Model</label>
+      <input type="text" class="form-control" id="model" placeholder="Enter model" formControlName="model">
+      <div class="alert alert-danger" *ngIf="fields?.model.touched && fields?.model?.errors?.required">
+        <span>Model field is required!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="horsePower">Horsepower</label>
+      <input type="number" class="form-control" id="horsePower" placeholder="Enter horsepower"
+        formControlName="horsePower">
+      <div class="alert alert-danger" *ngIf="fields?.horsePower.touched && fields?.horsePower?.errors?.required">
+        <span>Horsepower field is required!</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="fields.horsePower?.errors?.min">
+        <span>Horsepower field must be greater than or equal to {{ fields.horsePower.errors.min.min }}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="engineType">Engine Type</label>
+      <input type="text" class="form-control" id="engineType" placeholder="Enter Engine Type"
+        formControlName="engineType">
+    </div>
+    <div class="form-group">
+      <label for="fuelCapacity">Fuel Capacity</label>
+      <input type="number" class="form-control" id="fuelCapacity" placeholder="Enter your password"
+        formControlName="fuelCapacity">
+      <div class="alert alert-danger" *ngIf="fields.fuelCapacity.touched && fields.fuelCapacity?.errors?.required">
+        <span>Fuel Capacity field is required!</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="fields.fuelCapacity?.errors?.min">
+        <span>Fuel Capacity field must be greater than or equal to {{ fields.fuelCapacity.errors.min.min }}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="transmission">Transmission</label>
+      <input type="text" class="form-control" id="transmission" placeholder="Enter transmission"
+        formControlName="transmission">
+    </div>
+    <div class="form-group">
+      <label for="kilometersTraveld">Kilometers Traveld</label>
+      <input type="number" class="form-control" id="kilometersTraveld" placeholder="Enter kilometers traveld"
+        formControlName="kilometersTraveld">
+      <div class="alert alert-danger"
+        *ngIf="fields.kilometersTraveld.touched && fields.kilometersTraveld?.errors?.required">
+        <span>Kilometers Traveld field is required!</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="fields.kilometersTraveld?.errors?.min">
+        <span>Kilometers Traveld field must be greater than or equal to
+          {{ fields.kilometersTraveld.errors.min.min }}</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" rows="5" id="description" placeholder="Enter description"
+        formControlName="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">Image Url</label>
+      <input type="text" class="form-control" id="imageUrl" placeholder="Enter image url" formControlName="imageUrl">
+      <div class="alert alert-danger" *ngIf="fields.imageUrl.touched && fields.imageUrl?.errors?.required">
+        <span>Image Url field is required!</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="fields.imageUrl?.errors?.image">
+        <span>Image Url must start width "http" and end width ".jpg", ".jpeg" or ".png"</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="priceForDayRent">Price For Day Rent</label>
+      <input type="number" class="form-control" id="priceForDayRent" placeholder="Enter price for day rent"
+        formControlName="priceForDayRent">
+      <div class="alert alert-danger"
+        *ngIf="fields.priceForDayRent.touched && fields.priceForDayRent?.errors?.required">
+        <span>Price For Day Rent field is required!</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="fields.priceForDayRent?.errors?.min">
+        <span>Price For Day Rent field must be greater than or equal to
+          {{ fields.priceForDayRent.errors.min.min }}</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">{{ formName }}</button>
+  </form>
+</section>

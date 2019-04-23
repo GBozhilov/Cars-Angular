@@ -1,0 +1,13 @@
+<section class="car-edit">
+    <header>
+      <h1>Edit Car</h1>
+    </header>
+    <section class="content">
+      <app-car-form 
+        [car]="car"
+        [isDisabled]=false
+        formName="Edit"
+        (onSubmitForm)="edit($event)">
+      </app-car-form>
+    </section>
+  </section>

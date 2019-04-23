@@ -1,0 +1,40 @@
+<section class="list-cars">
+  <header>
+    <h1>All Cars</h1>
+  </header>
+  <section class="content">
+    <section class="list">
+      <ul class="row">
+        <li class="col-4" *ngFor="let car of (cars$ | async)">
+          <article class="card text-white bg-dark mb-3">
+            <div class="card-header border-dark text-center">{{ car.model }}</div>
+            <img class="card-img-top" src="{{ car.imageUrl }}" alt="not found image">
+            <div class="card-body text-center">
+              <h5 class="card-title border-success">Price per day: {{ car.priceForDayRent }}$</h5>
+              <p class="card-text">{{ car.description }}</p>
+            </div>
+            <div class="card-footer border-white text-center">
+              <div class="row">
+                  <a [routerLink]="[ '/car/details', car._id ]" class="btn btn-info col-4">More Details</a>
+                  <ng-template [ngIf]="isLogged">
+                      <ng-template [ngIf]="car.isRented">
+                          <span class="btn btn-dark my-span">Sorry, Car Is Rented!</span>
+                      </ng-template>
+                      <ng-template [ngIf]="!car.isRented">
+                          <a [routerLink]="[ '/rent/create', car._id ]" class="btn btn-light col-5 e">Rent Car</a>
+                      </ng-template>
+                  </ng-template>
+                  <ng-template [ngIf]="isAdmin">
+                    <div>
+                        <a [routerLink]="[ '/car/delete', car._id ]" class="btn btn-danger col-4">Delete</a>
+                        <a [routerLink]="[ '/car/edit', car._id ]" class="btn btn-warning e">Edit</a>
+                    </div>
+                  </ng-template>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,10 @@
+article img {
+  display: block;
+  width: 100%;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.c {
+  background-color: #ffbd54;
+}

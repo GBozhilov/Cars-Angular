@@ -1,0 +1,22 @@
+.login header h1 {
+  text-align: center;
+}
+
+.login {
+  padding: 1em;
+}
+
+.form, .image {
+  padding: 0.5em;
+}
+
+.image div {
+  text-align: center;
+}
+
+.image div img {
+  min-height: 465px;
+  width: 100%;
+  border-radius: 1.5em;
+  overflow: hidden;
+}

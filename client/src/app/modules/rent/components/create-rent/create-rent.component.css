@@ -1,0 +1,18 @@
+.rent header h1 {
+    text-align: center;
+}
+
+.rent {
+    padding: 1em;
+}
+
+.form {
+    padding: 0.5em;
+}
+
+.car {
+    margin: 4em auto;
+    border: 2px solid #343a40;
+    border-radius: 0.5em;
+    padding: 2em;
+}

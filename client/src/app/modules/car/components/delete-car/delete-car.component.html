@@ -1,0 +1,13 @@
+<section class="car-delete">
+    <header>
+      <h1>Delete Car</h1>
+    </header>
+    <section class="content">
+    <app-car-form 
+      [car]="car"
+      [isDisabled]=true
+      formName="Delete"
+      (onSubmitForm)="delete()">
+    </app-car-form>
+    </section>
+  </section>

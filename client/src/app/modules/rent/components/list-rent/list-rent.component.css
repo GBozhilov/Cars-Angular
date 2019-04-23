@@ -1,0 +1,45 @@
+.list-rents header h1 {
+    text-align: center;
+}
+
+.list-rents {
+    padding: 1em;
+}
+
+table {
+    width: 100%;
+    padding: 0.3em;
+    text-align: center; 
+}
+
+table a {
+    margin-right: 1em;
+}
+
+table thead {
+    background-color: rgb(0, 123, 255);
+}
+
+table td {
+    padding: 0.5em 0;
+}
+
+.b {
+    font-weight: bold;
+}
+
+.image {
+    padding: 1em;
+}
+
+.image div {
+    text-align: center;
+}
+
+.image div img {
+    min-height: 648px;
+    width: 1077px;
+    border-radius: 1.5em;
+    margin: 0 1em;
+    overflow: hidden;
+}
