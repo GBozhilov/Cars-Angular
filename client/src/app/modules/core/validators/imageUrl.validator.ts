@@ -1,4 +1,4 @@
-import { AbstractControl } from "@angular/forms";
+import { AbstractControl } from '@angular/forms';
 
 function imageUrlValidator(control: AbstractControl): { [key: string]: boolean } | null {
     if (control.value === "" || control.value === null) {

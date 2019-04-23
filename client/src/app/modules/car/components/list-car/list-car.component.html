@@ -13,7 +13,7 @@
               <h5 class="card-title border-success">Price per day: {{ car.priceForDayRent }}$</h5>
               <p class="card-text">{{ car.description }}</p>
             </div>
-            <div class="card-footer border-white text-center">
+            <div class="card-footer border-warning text-center">
               <div class="row">
                   <a [routerLink]="[ '/car/details', car._id ]" class="btn btn-info col-4">More Details</a>
                   <ng-template [ngIf]="isLogged">

@@ -15,7 +15,7 @@ import { UserService } from './services/user.service';
 import { CarService } from './services/car.service';
 import { RentService } from './services/rent.service';
 
-import { CarDetailsReslover } from './resolvers/car-details.resolver';
+import { CarDetailsResolver } from './resolvers/car-details.resolver';
 
 @NgModule({
   declarations: [],
@@ -41,7 +41,7 @@ import { CarDetailsReslover } from './resolvers/car-details.resolver';
     UserService,
     CarService,
     RentService,
-    CarDetailsReslover,
+    CarDetailsResolver,
   ],
   exports: [ ]
 })

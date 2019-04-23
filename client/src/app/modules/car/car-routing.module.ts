@@ -10,14 +10,14 @@ import { DetailsCarComponent } from './components/details-car/details-car.compon
 import { AuthGuard } from '../core/guards/auth.guard';
 import { AdminGuard } from '../core/guards/admin.guard';
 
-import { CarDetailsReslover } from '../core/resolvers/car-details.resolver';
+import { CarDetailsResolver } from '../core/resolvers/car-details.resolver';
 
 const routes: Routes = [
     { path: 'all', component: ListCarComponent },
     { path: 'create', component: CreateCarComponent, canActivate: [ AuthGuard, AdminGuard ] },
-    { path: 'edit/:id', component: EditCarComponent, canActivate: [ AuthGuard, AdminGuard ], resolve: { car: CarDetailsReslover } },
-    { path: 'delete/:id', component: DeleteCarComponent, canActivate: [ AuthGuard, AdminGuard ], resolve: { car: CarDetailsReslover } },
-    { path: 'details/:id', component: DetailsCarComponent, resolve: { car: CarDetailsReslover } }
+    { path: 'edit/:id', component: EditCarComponent, canActivate: [ AuthGuard, AdminGuard ], resolve: { car: CarDetailsResolver } },
+    { path: 'delete/:id', component: DeleteCarComponent, canActivate: [ AuthGuard, AdminGuard ], resolve: { car: CarDetailsResolver } },
+    { path: 'details/:id', component: DetailsCarComponent, resolve: { car: CarDetailsResolver } }
 ];
 
 @NgModule({

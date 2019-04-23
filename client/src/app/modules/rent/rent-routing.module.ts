@@ -6,11 +6,11 @@ import { CreateRentComponent } from './components/create-rent/create-rent.compon
 
 import { RentCarGuard } from '../core/guards/rent-car.guard';
 
-import { CarDetailsReslover } from '../core/resolvers/car-details.resolver';
+import { CarDetailsResolver } from '../core/resolvers/car-details.resolver';
 
 const routes: Routes = [
     { path: 'mine', component: ListRentComponent },
-    { path: 'create/:id', component: CreateRentComponent, canActivate: [ RentCarGuard ], resolve: { car: CarDetailsReslover } },
+    { path: 'create/:id', component: CreateRentComponent, canActivate: [ RentCarGuard ], resolve: { car: CarDetailsResolver } },
 ];
 
 @NgModule({

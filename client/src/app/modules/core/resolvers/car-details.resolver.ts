@@ -5,7 +5,7 @@ import { CarService } from '../services/car.service';
 import ICar from '../interfaces/ICar';
 
 @Injectable()
-export class CarDetailsReslover implements Resolve<ICar> {
+export class CarDetailsResolver implements Resolve<ICar> {
 
     constructor(private carService: CarService) {}
 
