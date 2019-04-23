@@ -41,7 +41,7 @@ router.post('/login', [
             return User.findOne({email: value})
                 .then(userDoc => {
                     if (!userDoc) {
-                        return Promise.reject('Invalid email or password!');
+                        return Promise.reject('Invalid Email Or Password');
                     }
                 })
         }),
@@ -51,7 +51,7 @@ router.post('/login', [
                 .then(userDoc => {
                     if (userDoc) {
                         if (!userDoc.authenticate(value || "")) {
-                            return Promise.reject('Invalid email or password!');
+                            return Promise.reject('Invalid Email Or Password');
                         }
                     }
                 })

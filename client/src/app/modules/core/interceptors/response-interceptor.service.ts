@@ -6,17 +6,17 @@ import { tap, catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
-export class ResponceInterceptorService implements HttpInterceptor {
+export class ResponseInterceptorService implements HttpInterceptor {
 
     constructor(public toastr: ToastrService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(req).pipe(
-            tap((responce) => {
-                if (responce instanceof HttpResponse) {
-                    const message = responce.body['message'];
+            tap((res) => {
+                if (res instanceof HttpResponse) {
+                    const message = res.body['message'];
 
-                    if (responce.url.includes('details')) {
+                    if (res.url.includes('details')) {
                         return;
                     }
 
@@ -25,10 +25,10 @@ export class ResponceInterceptorService implements HttpInterceptor {
                     }
                 }
             }),
-            catchError((responce) => {
+            catchError((res) => {
                 const messages = new Set();
 
-                responce['error']['errors'].forEach((error) => {
+                res['error']['errors'].forEach((error) => {
                     messages.add(error['msg']);
                 });
 
@@ -36,7 +36,7 @@ export class ResponceInterceptorService implements HttpInterceptor {
                     this.toastr.error(message);
                 });
                 
-                throw responce;
+                throw res;
             })
         );
     }

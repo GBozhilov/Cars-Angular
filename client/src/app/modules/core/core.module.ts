@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { RequestInterceptorService } from './interceptors/request-interceptor.service';
-import { ResponceInterceptorService } from './interceptors/responce-interceptor.service';
+import { ResponseInterceptorService } from './interceptors/response-interceptor.service';
 
 import { AnonymousModuleGuard } from './guards/anonymous-module.guard';
 import { AuthModuleGuard } from './guards/auth-module.guard';
@@ -30,7 +30,7 @@ import { CarDetailsReslover } from './resolvers/car-details.resolver';
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: ResponceInterceptorService,
+      useClass: ResponseInterceptorService,
       multi: true
     },
     AnonymousModuleGuard,
