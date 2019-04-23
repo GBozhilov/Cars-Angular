@@ -6,36 +6,36 @@
     <section class="list col-12">
       <table class="table-striped">
         <thead>
-          <tr>
-            <th>&#8470;</th>
-            <th>Car</th>
-            <th>Rent Days</th>
-            <th>Actions</th>
-          </tr>
+        <tr>
+          <th>&#8470;</th>
+          <th>Car</th>
+          <th>Rent Days</th>
+          <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let rent of (rentedCars$ | async); let i = index">
-            <td class="b">
-              {{ i + 1 }}
-            </td>
-            <td>
-              {{ rent.car.model }}
-            </td>
-            <td>
-              {{ rent.days }}
-            </td>
-            <td>
-              <a class="btn btn-primary" [routerLink]="[ '/car/details', rent.car._id ]">Car Details</a>
-              <a (click)="returnCar(rent._id)" class="btn btn-danger">Return Car</a>
-            </td>
-          </tr>
+        <tr *ngFor="let rent of (rentedCars$ | async); let i = index">
+          <td class="b">
+            {{ i + 1 }}
+          </td>
+          <td>
+            {{ rent.car.model }}
+          </td>
+          <td>
+            {{ rent.days }}
+          </td>
+          <td>
+            <a class="btn btn-info" [routerLink]="[ '/car/details', rent.car._id ]">Car Details</a>
+            <a (click)="returnCar(rent._id)" class="btn btn-danger">Return Car</a>
+          </td>
+        </tr>
         </tbody>
       </table>
     </section>
     <section class="image row">
-        <div>
-          <img src="http://www.gujaratcarz.in/images/car_rantal.png" alt="not found car-rent">
-        </div>
-      </section>
+      <div>
+        <img src="https://www.tuningblog.eu/wp-content/uploads/2018/05/DarwinPro-Bodykit-Audi-RS6-Tuning-ADV.1-Wheels-80.jpg" alt="">
+      </div>
+    </section>
   </section>
 </section>

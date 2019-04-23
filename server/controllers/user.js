@@ -11,7 +11,7 @@ function validateUser(req, res) {
 
     if (!errors.isEmpty()) {
         res.status(422).json({
-            message: 'Validation failed, entered data is incorrect',
+            message: 'Validation Failed Entered Data Is Incorrect',
             errors: errors.array()
         });
 
@@ -40,7 +40,7 @@ module.exports = {
 
                 const user = await User.create(newUser);
 
-                res.status(201).json({message: 'You are successfully registered!', userId: user.id});
+                res.status(201).json({message: 'You Are Successfully Registered', userId: user.id});
             } catch (error) {
                 if (!error.statusCode) {
                     error.statusCode = 500;
@@ -58,7 +58,7 @@ module.exports = {
 
                 const token = jwt.sign({userId: user._id.toString()}, configuration.decodedToken, {expiresIn: '9h'});
 
-                res.status(200).json({message: 'You are successfully logged in!', token, user});
+                res.status(200).json({message: 'You Are Successfully Logged In', token, user});
             } catch (error) {
                 if (!error.statusCode) {
                     error.statusCode = 500;
@@ -73,7 +73,7 @@ module.exports = {
             const userId = req.userId;
 
             if (!userId) {
-                const error = new Error('You are not a current user.');
+                const error = new Error('You Are Not A Current User');
                 error.statusCode = 401;
                 throw error;
             }

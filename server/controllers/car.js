@@ -49,7 +49,7 @@ module.exports = {
 
                 const car = await Car.create(newCar);
 
-                res.status(201).json({message: 'Car created!', car});
+                res.status(201).json({message: 'Car Created', car});
             } catch (error) {
                 if (!error.statusCode) {
                     error.statusCode = 500;
@@ -92,7 +92,7 @@ module.exports = {
 
                 const newCar = await Car.findById(carId);
 
-                res.status(200).json({message: 'Car updated!', car: newCar});
+                res.status(200).json({message: 'Car Updated', car: newCar});
 
             } catch (error) {
                 if (!error.statusCode) {
@@ -120,7 +120,7 @@ module.exports = {
                 }
 
                 await Car.findByIdAndDelete(carId);
-                res.status(200).json({message: `Car is deleted!`});
+                res.status(200).json({message: `Car Deleted`});
             } catch (error) {
                 if (!error.statusCode) {
                     error.statusCode = 500;

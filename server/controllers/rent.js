@@ -45,7 +45,7 @@ module.exports = {
                 car.counterRents = car.counterRents + 1;
                 car.save();
 
-                res.status(201).json({message: 'You successfully rent this car!', rent});
+                res.status(201).json({message: 'You Successfully Rent This Car', rent});
             } catch (error) {
                 if (!error.statusCode) {
                     error.statusCode = 500;
@@ -81,7 +81,7 @@ module.exports = {
 
                 await rent.remove();
 
-                res.status(200).json({message: 'Car is returned!'});
+                res.status(200).json({message: 'Car Is Returned'});
             } catch (error) {
                 if (!error.statusCode) {
                     error.statusCode = 500;

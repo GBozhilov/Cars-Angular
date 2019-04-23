@@ -15,7 +15,7 @@ export class CreateRentComponent implements OnDestroy {
   private createRentStream$: Subscription;
   public form: FormGroup;
   public readonly fields;
-  public car: ICar
+  public car: ICar;
 
   constructor(
     private formBuilder: FormBuilder,

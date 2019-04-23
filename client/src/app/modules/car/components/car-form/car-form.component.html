@@ -10,7 +10,7 @@
     <div class="form-group">
       <label for="horsePower">Horsepower</label>
       <input type="number" class="form-control" id="horsePower" placeholder="Enter horsepower"
-        formControlName="horsePower">
+             formControlName="horsePower">
       <div class="alert alert-danger" *ngIf="fields?.horsePower.touched && fields?.horsePower?.errors?.required">
         <span>Horsepower field is required!</span>
       </div>
@@ -20,13 +20,13 @@
     </div>
     <div class="form-group">
       <label for="engineType">Engine Type</label>
-      <input type="text" class="form-control" id="engineType" placeholder="Enter Engine Type"
-        formControlName="engineType">
+      <input type="text" class="form-control" id="engineType" placeholder="Enter engine type"
+             formControlName="engineType">
     </div>
     <div class="form-group">
       <label for="fuelCapacity">Fuel Capacity</label>
-      <input type="number" class="form-control" id="fuelCapacity" placeholder="Enter your password"
-        formControlName="fuelCapacity">
+      <input type="number" class="form-control" id="fuelCapacity" placeholder="Enter fuel capacity"
+             formControlName="fuelCapacity">
       <div class="alert alert-danger" *ngIf="fields.fuelCapacity.touched && fields.fuelCapacity?.errors?.required">
         <span>Fuel Capacity field is required!</span>
       </div>
@@ -37,25 +37,25 @@
     <div class="form-group">
       <label for="transmission">Transmission</label>
       <input type="text" class="form-control" id="transmission" placeholder="Enter transmission"
-        formControlName="transmission">
+             formControlName="transmission">
     </div>
     <div class="form-group">
-      <label for="kilometersTraveld">Kilometers Traveld</label>
-      <input type="number" class="form-control" id="kilometersTraveld" placeholder="Enter kilometers traveld"
-        formControlName="kilometersTraveld">
+      <label for="kilometersTraveld">Kilometers Traveled</label>
+      <input type="number" class="form-control" id="kilometersTraveld" placeholder="Enter kilometers traveled"
+             formControlName="kilometersTraveld">
       <div class="alert alert-danger"
-        *ngIf="fields.kilometersTraveld.touched && fields.kilometersTraveld?.errors?.required">
-        <span>Kilometers Traveld field is required!</span>
+           *ngIf="fields.kilometersTraveld.touched && fields.kilometersTraveld?.errors?.required">
+        <span>Kilometers Traveled field is required!</span>
       </div>
       <div class="alert alert-danger" *ngIf="fields.kilometersTraveld?.errors?.min">
-        <span>Kilometers Traveld field must be greater than or equal to
+        <span>Kilometers Traveled field must be greater than or equal to
           {{ fields.kilometersTraveld.errors.min.min }}</span>
       </div>
     </div>
     <div class="form-group">
       <label for="description">Description</label>
       <textarea class="form-control" rows="5" id="description" placeholder="Enter description"
-        formControlName="description"></textarea>
+                formControlName="description"></textarea>
     </div>
     <div class="form-group">
       <label for="imageUrl">Image Url</label>
@@ -70,9 +70,9 @@
     <div class="form-group">
       <label for="priceForDayRent">Price For Day Rent</label>
       <input type="number" class="form-control" id="priceForDayRent" placeholder="Enter price for day rent"
-        formControlName="priceForDayRent">
+             formControlName="priceForDayRent">
       <div class="alert alert-danger"
-        *ngIf="fields.priceForDayRent.touched && fields.priceForDayRent?.errors?.required">
+           *ngIf="fields.priceForDayRent.touched && fields.priceForDayRent?.errors?.required">
         <span>Price For Day Rent field is required!</span>
       </div>
       <div class="alert alert-danger" *ngIf="fields.priceForDayRent?.errors?.min">
@@ -80,6 +80,6 @@
           {{ fields.priceForDayRent.errors.min.min }}</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">{{ formName }}</button>
+    <button type="submit" class="btn btn-dark" [disabled]="form.invalid">{{ formName }}</button>
   </form>
 </section>

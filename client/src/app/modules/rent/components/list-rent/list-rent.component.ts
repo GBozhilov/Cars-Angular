@@ -18,7 +18,7 @@ export class ListRentComponent implements OnDestroy {
   }
 
   returnCar(rentId) {
-    this.rentStream$ = this.rentService.delete(rentId).subscribe((responce) => {
+    this.rentStream$ = this.rentService.delete(rentId).subscribe((res) => {
       this.rentedCars$ = this.rentService.getCurrentUserRents();
     });
   }
