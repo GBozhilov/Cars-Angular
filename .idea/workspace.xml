@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb08d0c9-3237-4d1e-bfb1-942a39c33149" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Bozhilov.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Bozhilov.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/car/car-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/car/car-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/car/components/list-car/list-car.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/car/components/list-car/list-car.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/core/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/core/core.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/core/resolvers/car-details.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/core/resolvers/car-details.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/core/validators/imageUrl.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/core/validators/imageUrl.validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/core/validators/repeat-password.validator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/core/validators/repeat-password.validator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/modules/rent/rent-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/modules/rent/rent-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/car.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/car.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +14,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/controllers/car.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,7 +64,6 @@
         <option value="$PROJECT_DIR$/client/src/app/modules/car/components/car-form/car-form.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/modules/car/components/details-car/details-car.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/modules/rent/components/list-rent/list-rent.component.css" />
-        <option value="$PROJECT_DIR$/server/controllers/car.js" />
         <option value="$PROJECT_DIR$/client/src/app/modules/rent/components/create-rent/create-rent.component.html" />
         <option value="$PROJECT_DIR$/server/controllers/rent.js" />
         <option value="$PROJECT_DIR$/server/controllers/user.js" />
@@ -83,6 +82,7 @@
         <option value="$PROJECT_DIR$/client/src/styles.css" />
         <option value="$PROJECT_DIR$/client/src/index.html" />
         <option value="$PROJECT_DIR$/client/src/app/modules/car/components/list-car/list-car.component.html" />
+        <option value="$PROJECT_DIR$/server/controllers/car.js" />
       </list>
     </option>
   </component>
@@ -116,6 +116,17 @@
             <path>
               <item name="Cars-Angular" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cars-Angular" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cars-Angular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cars-Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cars-Angular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cars-Angular" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -167,14 +178,16 @@
       <workItem from="1555937716302" duration="4249000" />
       <workItem from="1555954607480" duration="15527000" />
       <workItem from="1556041943788" duration="5878000" />
+      <workItem from="1556172328461" duration="44000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25654000" />
+    <option name="totallyTimeSpent" value="25698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -200,9 +213,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/configuration/routes.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -547,6 +557,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="69" lean-forward="true" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/car.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
         </state>
       </provider>
     </entry>

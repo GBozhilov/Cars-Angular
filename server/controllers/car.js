@@ -9,7 +9,7 @@ function validateCar(req, res) {
 
     if (!errors.isEmpty()) {
         res.status(422).json({
-            message: 'Validation failed, entered data is incorrect',
+            message: 'Validation Failed, Entered Data Is Incorrect',
             errors: errors.array()
         });
 
